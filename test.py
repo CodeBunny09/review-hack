@@ -168,17 +168,17 @@ def review(link):
     sleep(4)
 
     #Fname
-    driver.find_element(By.ID, "S090100").send_keys(data.FirstName[-1])
+    driver.find_element(By.ID, "S090100").send_keys(data.FirstName[0])
     #LName
-    driver.find_element(By.ID, "S090200").send_keys(data.LastName[-1])
+    driver.find_element(By.ID, "S090200").send_keys(data.LastName[0])
     #Number
-    driver.find_element(By.ID, "S092000").send_keys(data.PhoneNumber[-1])
+    driver.find_element(By.ID, "S092000").send_keys(data.PhoneNumber[0])
     #Email
-    driver.find_element(By.ID, "S093000").send_keys(data.Email[-1])
+    driver.find_element(By.ID, "S093000").send_keys(data.Email[0])
     #Conf Email
-    driver.find_element(By.ID, "S093500").send_keys(data.Email[-1])
+    driver.find_element(By.ID, "S093500").send_keys(data.Email[0])
 
-    data.drop(index=data.index[-1],axis=0,inplace=True)
+    data.drop(index=data.index[0],axis=0,inplace=True)
     data.to_csv('data.csv', mode="w")
 
     driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[1]/form/div/div[9]/input').click()
