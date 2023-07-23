@@ -1,0 +1,7 @@
+declare -a arr=("https://s.pizzahutsurvey.com/IND?CN=SFL222220723112020&V=5&O=1&source=SMS&U=1323109000011368" "https://s.pizzahutsurvey.com/IND?CN=SFL222220723112920&V=5&O=1&source=SMS&U=1323109000011369" "https://s.pizzahutsurvey.com/IND?CN=SFL222220723111020&V=5&O=1&source=SMS&U=1323109000011370"  "https://s.pizzahutsurvey.com/IND?CN=SFL222220723141020&V=5&O=1&source=SMS&U=1323109000011371" "https://s.pizzahutsurvey.com/IND?CN=SFL222220723141920&V=5&O=1&source=SMS&U=1323109000011372" "https://s.pizzahutsurvey.com/IND?CN=SFL222220723161920&V=5&O=1&source=SMS&U=1323109000011373" "https://s.pizzahutsurvey.com/IND?CN=SFL222220723200920&V=5&O=1&source=SMS&U=1323109000011374" "https://s.pizzahutsurvey.com/IND?CN=SFL222220723203020&V=5&O=1&source=SMS&U=1323109000011375" "https://s.pizzahutsurvey.com/IND?CN=SFL222220723203920&V=5&O=1&source=SMS&U=1323109000011376" "https://s.pizzahutsurvey.com/IND?CN=SFL222220723213920&V=5&O=1&source=SMS&U=1323109000011377" "https://s.pizzahutsurvey.com/IND?CN=SFL222220723211820&V=5&O=1&source=SMS&U=1323109000011378" "https://s.pizzahutsurvey.com/IND?CN=SFL222220723211810&V=5&O=1&source=SMS&U=1323109000011379" "https://s.pizzahutsurvey.com/IND?CN=SFL222220723212810&V=5&O=1&source=SMS&U=1323109000011380" "https://s.pizzahutsurvey.com/IND?CN=SFL222220723212020&V=5&O=1&source=SMS&U=1323109000011367" )
+
+for i in "${arr[@]}"
+do
+   echo "$i"
+   python test.py "$i"
+done
