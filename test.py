@@ -105,6 +105,7 @@ reviews = ["Delicious pizza with excellent toppings.",
 
 def review(link):
 
+    data = pd.read_csv('data.csv')
     driver = webdriver.Chrome()
     driver.get(link)
     sleep(5)
@@ -161,10 +162,27 @@ def review(link):
     driver.find_element(By.XPATH, '//*[@id="FNSR000294"]/div/div/div[4]').click()
     sleep(3)
 
-    #Not recieve emails
+    #Recieve emails
     print("Mails")
-    driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[1]/form/div/fieldset/div/div/div[2]').click()
+    driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[1]/form/div/fieldset/div/div/div[1]').click()
     sleep(4)
+
+    #Fname
+    driver.find_element(By.ID, "S090100").send_keys(data.FirstName[-1])
+    #LName
+    driver.find_element(By.ID, "S090200").send_keys(data.LastName[-1])
+    #Number
+    driver.find_element(By.ID, "S092000").send_keys(data.PhoneNumber[-1])
+    #Email
+    driver.find_element(By.ID, "S093000").send_keys(data.Email[-1])
+    #Conf Email
+    driver.find_element(By.ID, "S093500").send_keys(data.Email[-1])
+
+    data.drop(index=data.index[-1],axis=0,inplace=True)
+    data.to_csv('data.csv', mode="w")
+
+    driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[1]/form/div/div[9]/input').click()
+    sleep(3)
 
     #Review
     print("Review")
