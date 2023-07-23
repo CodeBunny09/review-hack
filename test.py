@@ -172,7 +172,7 @@ def review(link):
     #LName
     driver.find_element(By.ID, "S090200").send_keys(data.LastName[0])
     #Number
-    driver.find_element(By.ID, "S092000").send_keys(data.PhoneNumber[0])
+    driver.find_element(By.ID, "S092000").send_keys(int(data.PhoneNumber[0]))
     #Email
     driver.find_element(By.ID, "S093000").send_keys(data.Email[0])
     #Conf Email
